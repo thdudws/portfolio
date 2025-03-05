@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"); */
 
 /* #third {
         display: flex;
@@ -428,17 +428,17 @@
 
 /* 첫 번째 이미지 */
 .card-inner .box .imgBox-1 {
-  background-image: url('img/giodano.png');
+  background-image: url('backend/img/giodano.png');
 }
 
 /* 두 번째 이미지 */
 .card-inner .box .imgBox-2 {
-  background-image: url('img/ridibooks.png');
+  background-image: url('backend/img/ridibooks.png');
 }
 
 /* 세 번째 이미지 */
 .card-inner .box .imgBox-3 {
-  background-image: url('img/Melbourne.png');
+  background-image: url('backend/img/Melbourne.png');
 } 
 
 .card-inner .box .imgBox img {
