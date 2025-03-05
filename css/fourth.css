@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "S-CoreDream-3Light";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .typewriter {
+    font-family: "Courier New", monospace;
+    font-size: 2.5vw;
+    position: absolute;
+    z-index: 25;
+    font-family: "S-CoreDream-3Light";
+    letter-spacing: 8px;
+    white-space: pre-wrap;
+    text-align: center;
+    top: 45%;
+    line-height: 2.3;
+  }
+
+.heart {
+    position: absolute;
+    color: #fff;
+    animation: heart 5s linear infinite;
+    margin-left: -30px; /* optical correction */
+    z-index: 25;
+}
+
+@keyframes heart {
+    0% { opacity: 0; }
+    20% { left: 50vw; top: 35vh; opacity: 0; font-size: 55px; }
+    40% { left: 50vw; top: 35vh; opacity: 1; font-size: 55px; }
+    70% { left: 50vw; top: 35vh; opacity: 1; font-size: 55px; }
+    80% { left: 50vw; top: 30vh; opacity: 0; font-size: 40px; }
+    100% { opacity: 0; }
+}
