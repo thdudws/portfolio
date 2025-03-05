@@ -436,10 +436,10 @@
   background-image: url('img/ridibooks.png');
 }
 
-/* 세세 번째 이미지 */
+/* 세 번째 이미지 */
 .card-inner .box .imgBox-3 {
   background-image: url('img/Melbourne.png');
-}
+} 
 
 .card-inner .box .imgBox img {
   width: 100%;
