@@ -426,21 +426,6 @@
   border-radius: 7px; /* 이미지의 모서리 둥글게 처리 */
 }
 
-/* 첫 번째 이미지 */
-.card-inner .box .imgBox-1 {
-  background-image: url('backend/img/giodano.png');
-}
-
-/* 두 번째 이미지 */
-.card-inner .box .imgBox-2 {
-  background-image: url('backend/img/ridibooks.png');
-}
-
-/* 세 번째 이미지 */
-.card-inner .box .imgBox-3 {
-  background-image: url('backend/img/Melbourne.png');
-} 
-
 .card-inner .box .imgBox img {
   width: 100%;
   height: 100%;
