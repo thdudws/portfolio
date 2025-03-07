@@ -125,4 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
   skillSections.forEach((section) => {
     observerForVisibility.observe(section);
   });
+
+
+  const h2Elements = document.querySelectorAll('h2.bounce');
+
+  h2Elements.forEach(h2 => {
+    const text = h2.textContent;
+    h2.innerHTML = text.split('').map(letter => `<span>${letter}</span>`).join('');
+  });
+
+
 });
