@@ -170,7 +170,7 @@
 .second_r .skils {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
 }
 
 .second_r .skils.show {
@@ -195,11 +195,8 @@
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-   /* 박스 쉐도우 추가 */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-    
-   /* 둥근 모서리 추가 (선택 사항) */
-   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .skils h3 {
@@ -229,22 +226,21 @@
   margin-right: 15px;
 }
 
-/* 초기 상태에서 섹션은 화면 바깥으로 위치하고 보이지 않음 */
 .f_skils, .tool {
   opacity: 0;
-  transform: translateX(-200px); /* 화면 왼쪽으로 이동시킴 */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateX(-200px); 
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .b_skils {
   opacity: 0;
   transform: translateX(200px); 
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .f_skils.visible, .b_skils.visible, .tool.visible {
   opacity: 1;
-  transform: translateX(0); /* 스크롤 시 화면 안으로 이동 */
+  transform: translateX(0);
 }
 
 
@@ -317,7 +313,7 @@
 .card {
   opacity: 0; /* 초기에는 안 보이도록 설정 */
   transform: scale(0); /* 크기 0으로 설정 */
-  transition: all 0.5s ease; /* 애니메이션 효과 */
+  transition: all 1s ease; /* 애니메이션 효과 */
 }
 
 .card.visible {

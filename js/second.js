@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav__list a"); // 내비게이션 링크
 
   // requestAnimationFrame을 사용하여 스크롤 감지
+  let isScrolling = false; // 스크롤 상태 확인 변수
+  
   function handleScrollVisibility() {
     skillSections.forEach(function (section) {
       const rect = section.getBoundingClientRect();
@@ -69,40 +71,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 내비게이션 링크 클릭 시 해당 섹션으로 부드럽게 스크롤 이동
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); // 기본 클릭 동작(이동)을 막음
-
-      const targetId = this.getAttribute("href").slice(1); // 링크에서 #을 제외한 ID 추출
-      const targetSection = document.getElementById(targetId); // 해당 섹션
-
-      // 해당 섹션으로 부드럽게 스크롤 이동
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start", // 섹션 상단에 위치
-      });
-
-      // 스크롤 이동 후 약간의 지연을 두고 visible 클래스 적용
-      setTimeout(() => {
-        // 스크롤이 완료된 후에 해당 섹션에 애니메이션 적용
-        handleScrollVisibility();
-      }, 500); // 스크롤 완료 후 500ms 지연 (스크롤이 끝난 후 클래스를 추가)
-    });
-  });
+  // Throttle 적용 (기본적으로 200ms마다 한 번만 실행)
+  const throttledScroll = _.throttle(handleScrollVisibility, 200);
 
   // 스크롤 이벤트로 섹션 애니메이션 적용
-  window.addEventListener("scroll", handleScrollVisibility);
+  window.addEventListener("scroll", throttledScroll);
 
   // 페이지 로드 후 100ms 지연하여 초기 상태 확인
   window.addEventListener("load", () => {
     setTimeout(() => {
-      handleScrollVisibility(); // 페이지 로드 후 스크롤 이벤트 확인
+      throttledScroll(); // 페이지 로드 후 스크롤 이벤트 확인
     }, 100); // 100ms 지연 후 실행
   });
 
   // 페이지 로드 직후 바로 호출해서 초기 상태 확인
-  handleScrollVisibility();
+  throttledScroll();
 
   // IntersectionObserver로 섹션을 더욱 부드럽게 처리
   // 감지할 섹션을 IntersectionObserver로 처리
@@ -126,13 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
     observerForVisibility.observe(section);
   });
 
-
   const h2Elements = document.querySelectorAll('h2.bounce');
 
   h2Elements.forEach(h2 => {
     const text = h2.textContent;
     h2.innerHTML = text.split('').map(letter => `<span>${letter}</span>`).join('');
   });
-
-
 });
